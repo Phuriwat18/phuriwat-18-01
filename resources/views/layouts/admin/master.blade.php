@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>IT-Shop-Login</title>
+	<title>Login V16</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="{{ asset('admin/images/icons/logoicon.png') }}"/>
+	<link rel="icon" type="image/png" href="{{ asset('admin/images/icons/favicon.ico') }}"/>
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{{ asset('admin/vendor/bootstrap/css/bootstrap.min.css') }}">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{{ asset('admin/fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{ asset('admin/fonts/iconic/css/material-design-iconic-font.min.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('admin/fonts/Linearicons-Free-v1.0.0/icon-font.min.css') }}">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{{ asset('admin/vendor/animate/animate.css') }}">
 <!--===============================================================================================-->	
@@ -31,10 +31,11 @@
 	
 	<div class="limiter">
 		<div class="container-login100" style="background-image: url('admin/images/bg-01.jpg');">
-			<div class="wrap-login100">
-				
-                @yield('text')
-
+			<div class="wrap-login100 p-t-30 p-b-50">
+				<span class="login100-form-title p-b-41">
+					Account Login
+				</span>
+				@yield('text')
 			</div>
 		</div>
 	</div>

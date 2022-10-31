@@ -35,7 +35,7 @@
                     @endauth
                 </div>
             @endif
-                <p><h2><b>นายภูริวัฒน์ มีศรี เลขที่18</b></h2></p>
+                <p><h2><b>Project01</b></h2></p>
                 
         </div>
     </body>
