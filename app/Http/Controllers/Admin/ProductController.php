@@ -45,7 +45,7 @@ class ProductController extends Controller
         if( !empty($request->file('image')) )
         {
             $imageName = $this->Random().'.'.$request->image->extension();
-            $request->image->storeAs('contents', $imageName);
+            $request->image->storeAs('products', $imageName);
         }else{
             $imageName = null;
         }
