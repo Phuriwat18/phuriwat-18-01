@@ -531,13 +531,13 @@
       </section><!-- End Contact Section -->
   
       <section id="gallery">
-  
-        <div class="container" data-aos="fade-up">
+        
+        <div class="row" data-aos="fade-up">
           <div class="section-header">
             <h2>ผู้จัดทำ</h2>
           </div>
         </div>
-        <div class="col-md-3">
+        {{-- <div class="col-md-6 pb-3">
           <div class="card" style="width: 18rem;">
           <img src="{{ asset('template/promote/assets/img/phu/phu.png') }}" class="card-img-top" alt="ภาพพื้นหลังเท่ๆ">
           <div class="card-body">
@@ -548,7 +548,7 @@
           </div>
           </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-12">
           <div class="card" style="width: 18rem;">
           <img src="{{ asset('template/promote/assets/img/phu/min.png') }}" class="card-img-top" alt="ภาพพื้นหลังเท่ๆ">
           <div class="card-body">
@@ -559,7 +559,7 @@
           </div>
           </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-12">
           <div class="card" style="width: 18rem;">
           <img src="{{ asset('template/promote/assets/img/phu/bell.png') }}" class="card-img-top" alt="ภาพพื้นหลังเท่ๆ">
           <div class="card-body">
@@ -570,7 +570,7 @@
           </div>
           </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-12">
           <div class="card" style="width: 18rem;">
           <img src="{{ asset('template/promote/assets/img/phu/phuu.png') }}" class="card-img-top" alt="ภาพพื้นหลังเท่ๆ">
           <div class="card-body">
@@ -580,7 +580,88 @@
             <p class="card-text">เลขที่:18</p>
           </div>
           </div>
+        </div> --}}
+        <div class="row">
+          <div class="col-md-3">
+              <div class="card mb-3 product-wap rounded-0" style="width: 18rem;">
+                  <div class="card rounded-0">
+                      <img class="card-img rounded-0 img-fluid" src="{{ asset('template/promote/assets/img/phu/phu.png') }}">
+                      <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                          <ul class="list-unstyled">
+                              <li><a><i class="fas fa-cart-plus"></i></a></li>
+                          </ul>
+                      </div>
+                  </div>
+                  <div class="card-body">
+                      <a  class="h4 text-decoration-none">นายภูวเดช อินทร์รุ่ง</a>
+                      <a><h5>สาขาวิชา:เทคโนโลยีสารสนเทศ</h5></a>
+                      <a><h5>ระดับชั้น:ปวช.3/4</h5></a>
+                      <a><h5>เลขที่:4</h5></a>
+                      <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
+                          
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card mb-3 product-wap rounded-0" style="width: 18rem;">
+                <div class="card rounded-0">
+                    <img class="card-img rounded-0 img-fluid" src="{{ asset('template/promote/assets/img/phu/min.png') }}">
+                    <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                        <ul class="list-unstyled">
+                            <li><a><i class="fas fa-cart-plus"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-body">
+                  <a  class="h4 text-decoration-none">นางสาวณัฏฐณิชา	ตะกุดแจ่ม</a>
+                  <a><h5>สาขาวิชา:เทคโนโลยีสารสนเทศ</h5></a>
+                  <a><h5>ระดับชั้น:ปวช.3/4</h5></a>
+                  <a><h5>เลขที่:6</h5></a>
+                    <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
+                        
+                </div>
+            </div>
         </div>
+        <div class="col-md-3">
+          <div class="card mb-3 product-wap rounded-0" style="width: 18rem;">
+              <div class="card rounded-0">
+                  <img class="card-img rounded-0 img-fluid" src="{{ asset('template/promote/assets/img/phu/bell.png') }}">
+                  <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                      <ul class="list-unstyled">
+                          <li><a><i class="fas fa-cart-plus"></i></a></li>
+                      </ul>
+                  </div>
+              </div>
+              <div class="card-body">
+                <a  class="h4 text-decoration-none">นายสราวุธ เอี่ยมมาลา</a>
+                <a><h5>สาขาวิชา:เทคโนโลยีสารสนเทศ</h5></a>
+                <a><h5>ระดับชั้น:ปวช.3/4</h5></a>
+                <a><h5>เลขที่:17</h5></a>
+                  <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
+                      
+              </div>
+          </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card mb-3 product-wap rounded-0" style="width: 18rem;">
+            <div class="card rounded-0">
+                <img class="card-img rounded-0 img-fluid" src="{{ asset('template/promote/assets/img/phu/phuu.png') }}">
+                <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+                    <ul class="list-unstyled">
+                        <li><a><i class="fas fa-cart-plus"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-body">
+              <a  class="h4 text-decoration-none">นายภูริวัฒน์ มีศรี</a>
+              <a><h5>สาขาวิชา:เทคโนโลยีสารสนเทศ</h5></a>
+              <a><h5>ระดับชั้น:ปวช.3/4</h5></a>
+              <a><h5>เลขที่:18</h5></a>
+                <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
+                    
+            </div>
+        </div>
+    </div>
         
       </section><!-- End Gallery Section -->
 

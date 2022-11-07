@@ -160,6 +160,7 @@
     <!-- Bootstrap core JavaScript-->
     <script src="{{ asset('back-end/vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('back-end/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
 
     <!-- Core plugin JavaScript-->
     <script src="{{ asset('back-end/vendor/jquery-easing/jquery.easing.min.js') }}"></script>

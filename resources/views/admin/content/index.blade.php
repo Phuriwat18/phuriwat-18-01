@@ -20,10 +20,40 @@
             <tbody class="table-border-bottom-0">
               @foreach ($content as $item)
               <tr>
-              <td>{{ $content ->firstItem()+$loop->index}}</td>
+              <td>{{ $content->firstItem() + $loop->index }}</td>
               <td>{{ $item->name }}</td>
               <td>{{ $item->detail }}</td>
-              <td>{{ $item->image }}</td>
+              <td>
+                @if(!empty($item->image))
+                <!-- Button -->
+                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#showImageId{{ $item->id }}">
+                    ดูรูปภาพ
+                </button>
+                <!-- Modal -->
+                <div class="modal fade" id="showImageId{{ $item->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">{{ $item->name }}</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body d-flex justify-content-center">
+                                <img src="{{ asset('contents').'/'.$item->image }}" class="img-thumbnail" alt="#" />
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @else
+                <button type="button" class="btn btn-primary btn-sm" disabled>
+                    ไม่มีรูปภาพ
+                </button>
+                @endif
+            </td>
               <td>{{ $item->created_at }}</td>
               <td>{{ $item->updated_at }}</td>
               <td>

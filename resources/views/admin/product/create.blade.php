@@ -6,7 +6,7 @@
         <h5 class="card-header">Product</h5>
         <div class="card-body">
           <div>
-            <form action="{{ route('product.insert') }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('product.insert') }}" enctype="multipart/form-data" method="post" >
               @csrf
             <label for="defaultFormControlInput" class="form-label">Name</label>
             <input
@@ -52,11 +52,15 @@
             </select>
 
 
-            <label for="defaultFormControlInput" class="form-label">Images</label>
-              <div class="input-group">
-                <input type="file" class="form-control" name="image" id="inputGroupFile02" />
-                <label class="input-group-text" for="inputGroupFile02">Upload</label>
-              </div>
+            <div class="mb-3">
+              <label for="defaultFormControlInput" class="form-label">รูปภาพ</label>
+              <input
+                  class="form-control"
+                  type="file"
+                  name="image"
+                  placeholder="รูปภาพ"
+                  required
+              />
 
               <input href="" type="submit" value="บันทึก" class="btn btn-primary mt-3">
               <a href="{{ route('product.index') }}" class="btn btn-danger mt-3 mx-2">ย้อนกลับ</a>          
