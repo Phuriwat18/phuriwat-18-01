@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Product;
+use App\Models\Contents;
 
 class IndexController extends Controller
 {
@@ -22,7 +23,9 @@ class IndexController extends Controller
      */
     public function index()
     {
-        return view('promotepage.index')->with('products', Product::all());
+        $products = Product::all();
+        $content = Contents::all();
+        return view('promotepage.index',compact('products','content'));
     }
 
     public function admin()

@@ -9,6 +9,8 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+
+    private $path_stroage = "admin/contents";
     
     public function Random()
 
@@ -87,17 +89,72 @@ class ProductController extends Controller
         return view('admin.product.editform',compact('product','category'));
     }
 
-    public function update(Request $request, $product_id)
+    // public function update(Request $request, $product_id)
+    // {
+    //     $product = Product::find($product_id);
+    //     $product->name = $request->name;
+    //     $product->price = $request->price;
+    //     $product->description = $request->description;
+    //     $product->id_category = $request->id_category ;
+    //     $product->image = $request->image;
+    //     $product->update();
+    //     toast('แก้ไขข้อมูลสำเร็จ','success');
+    //     return redirect()->route('product.index');
+    // }
+
+    public function update($product_id, Request $request, Product $product)
     {
-        $product = Product::find($product_id);
-        $product->name = $request->name;
-        $product->price = $request->price;
-        $product->description = $request->description;
-        $product->id_category = $request->id_category ;
-        $product->image = $request->image;
-        $product->update();
-        toast('แก้ไขข้อมูลสำเร็จ','success');
+
+        // $Content = Content::find($id);
+        // $Content->name = $request->name;
+        // $Content->detail = $request->detail;
+        // $Content->image = $request->image;
+        // $Content->update();
+
+        if( !empty($request->file('image')) ){
+
+            $check = $product->where('id', $product_id)->first();
+
+            if(!empty($check->image))
+            {
+                $path = public_path().'/'.$this->path_stroage.'/'.$check->image;
+                if( file_exists($path) ):
+                    unlink($path);
+                endif;
+            }
+
+            $imageName = $this->Random().'.'.$request->image->extension();
+            $request->image->storeAs('products', $imageName);
+
+            $product->find($product_id)->update([
+
+                "name" => $request->name,
+                "image" => $imageName,
+                "detail" => $request->detail,
+                "price" => $request->price,
+                "description" => $request->description,
+                "id_category" => $request->id_category 
+
+            ]);
+
+        }else{
+
+            $product->find($product_id)->update([
+
+                "name" => $request->name,
+                "detail" => $request->detail,
+                "price" => $request->price,
+                "description" => $request->description,
+                "id_category" => $request->id_category 
+
+            ]);
+
+        }
+
+        toast('update ข้อมูลสำเร็จ', 'success');
+
         return redirect()->route('product.index');
+
     }
 
     public function delete($product_id)

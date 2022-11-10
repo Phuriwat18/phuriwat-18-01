@@ -52,11 +52,16 @@
             </select>
 
 
-            <label for="defaultFormControlInput" class="form-label">Images</label>
-              <div class="input-group">
-                <input type="file" class="form-control" name="image" id="inputGroupFile02" />
-                <label class="input-group-text" for="inputGroupFile02">Upload</label>
-              </div>
+            <div class="mb-3">
+              <label for="defaultFormControlInput" class="form-label">รูปภาพ</label>
+              <input
+                  class="form-control"
+                  type="file"
+                  name="image"
+                  placeholder="รูปภาพ"
+                  required
+              />
+              
             <Button type="submit" value="บันทึก" class="btn btn-primary mt-3" >บันทึก</Button>
             <a href="{{ route('product.index') }}" class="btn btn-danger mt-3 mx-2">ย้อนกลับ</a>
             </form>
