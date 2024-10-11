@@ -1,64 +1,68 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+วิธี clone github
+ไปที่หน้า GitHub ของ repository ที่คุณต้องการ clone
+คลิกที่ปุ่ม Code แล้วจะมีลิงก์สำหรับ clone (เช่น HTTPS, SSH หรือ GitHub CLI)
+เลือกใช้ลิงก์แบบ HTTPS (เช่น https://github.com/username/repository.git)
+เปิด Terminal หรือ Command Line:
+บน Windows: ใช้ Command Prompt, PowerShell หรือ Git Bash
+บน macOS หรือ Linux: เปิด Terminal
+ไปยังโฟลเดอร์ที่ต้องการบันทึกโปรเจกต์:
+ใช้คำสั่ง cd เพื่อไปยังโฟลเดอร์ที่คุณต้องการ clone โปรเจกต์ลงไป เช่น:
+cd path/to/your/folder
+ใช้คำสั่ง git clone: รันคำสั่งนี้ใน Terminal หรือ Command Line:
+git clone https://github.com/username/repository.git
+โดยเปลี่ยน https://github.com/username/repository.git เป็นลิงก์ของ repository ที่คุณได้คัดลอกมา
+ตรวจสอบการ clone สำเร็จ:
+เมื่อคำสั่งรันเสร็จสิ้น จะมีโฟลเดอร์ชื่อเดียวกับ repository ปรากฏในโฟลเดอร์ที่คุณอยู่
+ใช้คำสั่ง cd เพื่อลองเข้าไปในโฟลเดอร์ที่เพิ่งถูก clone:
+cd repository
+Clone ผ่าน SSH (ถ้ามีการตั้งค่า)
+หากคุณได้ตั้งค่า SSH keys ไว้แล้ว คุณสามารถใช้ SSH URL เพื่อ clone ได้:
+git clone git@github.com:username/repository.git
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+สร้าง env
+ขั้นตอนการสร้างไฟล์ .env
+คัดลอกไฟล์ .env.example: โดยทั่วไปในโปรเจกต์ Laravel จะมีไฟล์ตัวอย่าง .env.example อยู่แล้ว คุณสามารถคัดลอกไฟล์นี้เพื่อสร้างไฟล์ .env ใหม่
+รันคำสั่งนี้ใน Terminal หรือ Command Line (ใน root directory ของโปรเจกต์ Laravel):
+cp .env.example .env
+แก้ไขไฟล์ .env: เปิดไฟล์ .env ที่คุณเพิ่งคัดลอกมาและแก้ไขค่าต่าง ๆ ตามการตั้งค่าของโปรเจกต์คุณ เช่น การเชื่อมต่อฐานข้อมูล, แอปชื่อ, หรือการตั้งค่าอื่น ๆ
+ตัวอย่างค่าในไฟล์ .env:
+plaintext
+Copy code
+APP_NAME=Laravel
+APP_ENV=local
+APP_KEY=base64:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx=
+APP_DEBUG=true
+APP_URL=http://localhost
+LOG_CHANNEL=stack
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=newwork  # ชื่อฐานข้อมูลของคุณ
+DB_USERNAME=root     # ชื่อผู้ใช้
+DB_PASSWORD=         # รหัสผ่าน
+ตั้งค่า APP_KEY: หลังจากที่คุณสร้างไฟล์ .env แล้ว คุณต้องตั้งค่า APP_KEY เพื่อสร้างคีย์แอปพลิเคชัน ซึ่งใช้สำหรับการเข้ารหัสข้อมูลบางประเภทใน Laravel
+รันคำสั่งนี้:
+php artisan key:generate
+คำสั่งนี้จะสร้าง APP_KEY ให้โดยอัตโนมัติและบันทึกไว้ในไฟล์ .env
 
-## About Laravel
+สรุป
+ใช้คำสั่ง cp .env.example .env เพื่อคัดลอกไฟล์ตัวอย่าง.
+แก้ไขไฟล์ .env และตั้งค่าข้อมูลที่จำเป็น.
+รันคำสั่ง php artisan key:generate เพื่อสร้าง APP_KEY.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+สร้าง database (ถ้า database หาย)
+ตั้งชื่อ database ให้ และเอาชื่อใน database ไปใส่ใน VScode ให้ตรงกัน
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+สร้างตาราง ในdatabase 
+php artisan migrate
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
-### Premium Partners
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
 
-## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+เพียงเท่านี้คุณก็สร้างไฟล์ .env สำหรับโปรเจกต์ Laravel ได้เรียบร้อยแล้ว
